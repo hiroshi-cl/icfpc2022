@@ -24,3 +24,4 @@ block_id: NUMBER | NUMBER '.' block_id;
 NUMBER: [0-9]+;
 NEWLINE: [\n]+;
 COMMENT: '#' (~[\n])*;
+SPACE: ' ' -> skip;

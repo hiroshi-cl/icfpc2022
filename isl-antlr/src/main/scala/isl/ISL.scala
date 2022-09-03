@@ -12,7 +12,7 @@ case class Program(moves: Seq[Move]) extends ISL
 
 enum ProgramLine extends ISL:
   case MoveProgramLine(move: Move)
-  case Comment
+  case None
 
 enum Move extends ISL:
   case PcutMove(id: BlockId, point: Point)

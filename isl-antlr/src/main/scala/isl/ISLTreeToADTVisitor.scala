@@ -22,7 +22,7 @@ object ISLTreeToADTVisitor {
   private def visitProgram_line(ctx: ISLParser.Program_lineContext): ProgramLine =
     (ctx.move(), ctx.COMMENT()) match {
       case (c, null) => ProgramLine.MoveProgramLine(visitMove(c))
-      case (null, c) => ProgramLine.Comment
+      case (null, c) => ProgramLine.None
     }
 
   private def visitMove(ctx: ISLParser.MoveContext): Move =
