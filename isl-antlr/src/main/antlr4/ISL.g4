@@ -1,7 +1,6 @@
 grammar ISL;
-program: program_line | program_line NEWLINE program;
-program_line: NEWLINE | comment | move;
-comment: '#' UNICODE_STRING;
+program: program_line | program_line NEWLINE program EOF;
+program_line: COMMENT | move;
 move:
 	pcut_move
 	| lcut_move
@@ -23,5 +22,5 @@ point: '[' NUMBER ',' NUMBER ']';
 color: '[' NUMBER ',' NUMBER ',' NUMBER ',' NUMBER ']';
 block_id: NUMBER | NUMBER '.' block_id;
 NUMBER: [0-9]+;
-NEWLINE: [\n];
-UNICODE_STRING: [^\n]+;
+NEWLINE: [\n]+;
+COMMENT: '#' (~[\n])*;
