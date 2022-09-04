@@ -10,6 +10,8 @@ lazy val root = (project in file("."))
     Antlr4 / antlr4PackageName := Some("isl.antlr4"),
     Antlr4 / antlr4GenListener := true,
     Antlr4 / antlr4GenVisitor := true,
-    Antlr4 / antlr4TreatWarningsAsErrors := true
+    Antlr4 / antlr4TreatWarningsAsErrors := true,
+    libraryDependencies += "org.atnos" %% "eff" % "6.0.1",
+    scalacOptions += "-Ykind-projector"
   )
 
